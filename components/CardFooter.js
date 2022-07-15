@@ -3,6 +3,7 @@ import fire from '../assets/fire.png'
 import { FaSearch } from 'react-icons/fa'
 import { GiDiamonds } from 'react-icons/gi'
 import { TiMessages } from 'react-icons/ti'
+// import Message from './Message'
 
 const style = {
   wrapper: `h-16 w-full flex items-center justify-around py-5 px-4 bg-white`,
@@ -22,7 +23,11 @@ const CardFooter = () => {
       />
       <FaSearch className={style.icon} />
       <GiDiamonds className={style.icon} />
-      <TiMessages className={style.icon} />
+      <TiMessages className={style.icon}/>
+      {/*
+      <Message/>
+  */}
+
     </div>
   )
 }

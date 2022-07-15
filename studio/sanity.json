@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "nomads tinder clone"
-  },
   "api": {
-    "projectId": "lupabxcy",
+    "projectId": "u8sj19gi",
     "dataset": "production"
+  },
+  "project": {
+    "name": "nomads-tinder"
   },
   "plugins": [
     "@sanity/base",

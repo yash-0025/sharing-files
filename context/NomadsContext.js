@@ -1,6 +1,8 @@
 import { useState, createContext, useEffect } from 'react'
 import { useMoralis } from 'react-moralis'
-import { faker } from '@faker-js/faker'
+import Form from '../components/Form'
+
+// import { faker } from '@faker-js/faker'
 
 export const NomadsContext = createContext()
 
@@ -22,8 +24,9 @@ export const NomadsProvider = ({ children }) => {
   const checkWalletConnection = async () => {
     if (isAuthenticated) {
       const address = user.get('ethAddress')
+      const name = user.getUsername()
       setCurrentAccount(address)
-      requestToCreateUserProfile(address, faker.name.findName())
+      requestToCreateUserProfile(address, name )
     } else {
       setCurrentAccount('')
     }
@@ -81,6 +84,7 @@ export const NomadsProvider = ({ children }) => {
           names: [cardData.name, currentUser.name],
         }
 
+
         await fetch('/api/mintMatchNft', {
           method: 'POST',
           headers: {
@@ -111,12 +115,14 @@ export const NomadsProvider = ({ children }) => {
     }
   }
 
-  const requestCurrentUserData = async walletAddress => {
+  const requestCurrentUserData = async (walletAddress,name) => {
     try {
       const response = await fetch(
         `/api/fetchCurrentUserData?activeAccount=${walletAddress}`,
+        `/api/fetchCurrentUserData?activeAccount=${name}`
       )
       const data = await response.json()
+      console.log(data)
 
       setCurrentUser(data.data)
     } catch (error) {
@@ -124,12 +130,14 @@ export const NomadsProvider = ({ children }) => {
     }
   }
 
-  const requestUsersData = async activeAccount => {
+  const requestUsersData = async (activeAccount, name) => {
     try {
       const response = await fetch(
         `/api/fetchUsers?activeAccount=${activeAccount}`,
+        `/api/fetchUsers?activeAccount=${name}`
       )
       const data = await response.json()
+      console.log(data)
 
       setCardsData(data.data)
     } catch (error) {

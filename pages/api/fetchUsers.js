@@ -1,3 +1,4 @@
+
 import { client } from '../../lib/sanity'
 
 const getUserInfo = async (req, res) => {
@@ -11,6 +12,7 @@ const getUserInfo = async (req, res) => {
     `
 
     const sanityResponse = await client.fetch(query)
+
 
     res.status(200).send({ message: 'success', data: sanityResponse })
   } catch (error) {

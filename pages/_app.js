@@ -5,8 +5,9 @@ import { NomadsProvider } from '../context/NomadsContext'
 function MyApp({ Component, pageProps }) {
   return (
     <MoralisProvider
-    serverUrl='https://dcqe2y7fit4t.usemoralis.com:2053/server'
-    appId='ygIgTK7ksgmeoy03j18aaZygBjfAr7vaZee0XpFH'>
+    serverUrl='https://ktk8zb63sfv7.usemoralis.com:2053/server'
+    appId='0EMsOMzCNihw1CnxHlY7HjuccxgaCzOpif4L1I7X'
+    >
       <NomadsProvider>
         <Component {...pageProps} />
       </NomadsProvider>

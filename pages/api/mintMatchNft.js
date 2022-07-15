@@ -25,8 +25,8 @@ const mintMatchNft = async (req, res) => {
   const metadataURI = metadataFile.ipfs()
 
   const provider = ethers.getDefaultProvider(process.env.ALCHEMY_API_URL, {
-    chainId: 4,
-    name: 'rinkeby',
+    chainId: 80001,
+    name: 'Mumbai Testnet',
   })
 
   const walletWithProvider = new ethers.Wallet(

@@ -16,7 +16,7 @@ function CardHeader() {
     return (
         <div className={style.wrapper}>
         <Image
-        //   src={currentUser?.imageUrl || profilePic}
+          // src={currentUser?.imageUrl || profilePic}
           src = {profilePic}
           width={40}
           height={40}
